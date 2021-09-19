@@ -125,7 +125,7 @@ body{
     width: 9.125rem;
     height: 3rem;
     text-decoration: none;
-    background-color: var(--color-p-text);
+    background-color: var(--color-h-text);
     margin-top: var(--margin-cta);
     border-radius: 24px;
     transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1);
