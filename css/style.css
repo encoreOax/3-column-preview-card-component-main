@@ -1,0 +1,163 @@
+    /*
+    Name: Preview Card model.
+    Version: 1.20219
+    Created by: HESC
+    Mobile desingc widht (including padding) is 375px
+    Desktop version (including padding)         1440px
+    */
+    /* Style resert and root variables */
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* font sizes  */
+    --font-size: 15px;
+    /* Font types  */
+    --font-shoulders:'Big Shoulders Display', cursive;
+    --font-lexend:'Lexend Deca', sans-serif;
+    /* Font weight  */
+    --font-deca-normal: 400;
+    --font-shoulder-bold: 700;
+    /* colors */
+    /* backgrounds */
+    --color-orange: hsl(31, 77%, 52%);
+    --color-cyan: hsl(184, 100%, 22%);
+    --color-dark-cyan: hsl(179, 100%, 13%);
+    /* text color  */
+    --color-p-text: hsla(0, 0%, 100%, 0.75);
+    --color-h-text: hsl(0, 0%, 100%, 1);
+    /* page background  */
+    --color-pg-grey: hsl(0, 0%, 95%);
+    /* Border radius */
+    --border-radius: 0.375rem;
+    /* margin */
+    --margin-inner: 2.5rem;
+    --margin-cta: 1.875rem;
+    /*  measures  */
+    --width-image: 4.25rem;
+    --height-image: 2.625rem;
+    --width-card: 20.375rem;
+    --height-card: 27.5rem;
+}
+    /*------------ General stylign for various elements------------ */
+
+body{
+    font-family: var(--font-lexend);
+    font-size: var(--font-size);
+    line-height: 1.5625rem;
+}
+    /*------------ Container------------ */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-pg-grey);
+     /* for mobile version*/
+     flex-direction: column;
+     padding-top: 5.5rem;
+     padding-bottom: 5.5rem;
+}
+    /* ------------ Card formating and design ------------ */
+.card {
+    display: block;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: var(--width-card);
+    height: var(--height-card);
+    background-size: cover;
+    color: var(--color-p-text);
+}
+.card h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    font-family: var(--font-shoulders);
+    font-size: 2.125rem;
+    color: var(--color-h-text);
+}
+.card img {
+    margin-top: var(--margin-inner);
+    width: var(--width-image);
+    height: var(--height-image);
+}
+    /* for mobile version*/
+.card:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+.card:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+    /* Background classes */
+.orange {
+    background-color: var(--color-orange);
+}
+.text-o {
+    color: var(--color-orange);
+}
+.cyan {
+    background-color: var(--color-cyan);
+}
+.text-c {
+    color: var(--color-cyan);
+}
+.dark-cyan {
+    background-color: var(--color-dark-cyan);
+}
+.text-dc {
+    color: var(--color-dark-cyan);
+}
+.text-c:hover,
+.text-dc:hover, 
+.text-o:hover {
+    color: var(--color-p-text);
+}
+ /* ------------ Button ------------ */
+ .cta-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9.125rem;
+    height: 3rem;
+    text-decoration: none;
+    background-color: var(--color-p-text);
+    margin-top: var(--margin-cta);
+    border-radius: 24px;
+    transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1);
+ }
+ .cta-btn:hover {
+     background-color: transparent;
+     border: solid 2px var(--color-p-text);
+ }
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+@media all and (min-width: 1024px){
+    :root{
+        --border-radius: 0.4375rem;
+        --margin-inner: 2.9375rem;
+        --margin-cta: 5.5rem;
+        --width-image: 4.0625rem;
+        --height-image: 2.5rem;
+        --width-card: 19.125rem;
+        --height-card: 31.25rem;
+    }
+    .container {
+         /* for mobile version*/
+         flex-direction: row;
+         padding-top: auto;
+         padding-bottom: auto;
+    }
+    .card:first-child {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: var(--border-radius);
+    }
+    .card:last-child {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: var(--border-radius);
+    }
+}
